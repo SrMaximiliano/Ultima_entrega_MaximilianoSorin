@@ -1,0 +1,30 @@
+{% extends "App1/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<div class="row g-7">
+  <div class="col-md-10">
+    <h3 class="pb-4 mb-4 fst-italic border-bottom">
+      Bienvenido a mi humilde blog!
+    </h3>
+    <div class="col-md-11">  
+      <article class="blog-post">
+        <p>
+          <h5>
+            Este es el blog de Maximiliano Leonel Sorin, fue hecho como trabajo final del curso de Coderhouse.
+            {% if user.is_authenticated %}
+              <p>Bienvenido de vuelta {{user.username}} {{user.avatar}}</p>
+            {% else %}
+              <p>Espero que les guste lo que van a ver, aunque primero van a tener que <a href="{% url 'Login' %}">iniciar sesion</a> o <a href="{% url 'Register' %}">crearse una cuenta</a> si aun no lo hicieron.</p>
+            {% endif %}
+          </h5>
+        </p>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br>
+{% endblock %}

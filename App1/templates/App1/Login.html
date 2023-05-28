@@ -1,0 +1,14 @@
+{% extends "App1/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <p class="mb-0"><strong>Error de Autenticación :</strong> Nombre de usuario o contraseña incorrecta.</p>
+    </div>
+    {% endif %}
+    {{ form.as_p }}
+    <button type="submit">Iniciar sesión</button>
+</form>
+{% endblock %}

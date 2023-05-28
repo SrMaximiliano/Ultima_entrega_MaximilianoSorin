@@ -1,0 +1,6 @@
+{% extends "App1/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<p>Parece ser que no has iniciado sesion, haz click <a href="{% url 'Login' %}">aqui!</a> para iniciar sesion y poder ver esta pagina </p>
+<p>No tenes un usuario? Crea uno <a href="{% url 'Register' %}">aqui!</a> </p>
+{% endblock %}

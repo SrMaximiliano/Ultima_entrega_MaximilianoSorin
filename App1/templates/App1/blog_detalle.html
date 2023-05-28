@@ -1,0 +1,33 @@
+{% extends "App1/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><strong>Titulo:</strong> <i>{{ object.titulo }}</i></p>
+    <p><strong>Fecha:</strong> <i>{{ object.fecha }}</i></p>
+    <p><strong>Subtitulo:</strong> <i>{{ object.subtitulo }}</i></p> 
+    <p><strong>Contenido:</strong> <i>{{ object.contenido }}</i></p>
+    <p><strong>Autor:</strong> <i>{{ object.autor }}</i></p>
+    
+    {% if object.imagen %}
+        <p> <img src="{{ object.imagen.url }}" alt="{{ object.titulo }}" /></p> 
+    {% else %}
+        <p>No image available</p>
+    {% endif %}
+    
+    <p>
+        <a href="{% url 'Leer_Blogs' %}">Regresar</a>
+    </p>
+</body>
+</html>
+{% endblock %}
